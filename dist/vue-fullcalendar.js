@@ -552,6 +552,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      },
 	
 	      default: 0
+	    },
+	    eventLimit: {
+	      type: Number | String,
+	      default: 3
 	    }
 	  },
 	  components: {
@@ -565,7 +569,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return {
 	      currentMonth: (0, _moment2.default)().startOf('month'),
 	      isLismit: true,
-	      eventLimit: 4,
+	      // eventLimit : 4,
 	      showMore: false,
 	      morePos: {
 	        top: 0,

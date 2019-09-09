@@ -105,7 +105,11 @@
           return res >= 0 && res <= 6
         },
         default : 0
-      }
+      },
+      eventLimit : {
+        type: Number | String,
+        default: 3,
+      },
     },
     components : {
       'event-card': EventCard,
@@ -118,7 +122,7 @@
       return {
         currentMonth : moment().startOf('month'),
         isLismit : true,
-        eventLimit : 4,
+        // eventLimit : 4,
         showMore : false,
         morePos : {
           top: 0,
