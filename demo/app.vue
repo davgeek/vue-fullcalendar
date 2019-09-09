@@ -3,7 +3,7 @@
   	<p>
   		Here is the demo of vue-fullcalendar, no jquery fullcalendar.js required!
   	</p>
-    <full-calendar class="test-fc" :events="fcEvents" 
+    <full-calendar class="test-fc" :events="fcEvents" :noWorkables="[5,6]"
       first-day='1' locale="es"
       @changeMonth="changeMonth"
       @eventClick="eventClick"

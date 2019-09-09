@@ -26,7 +26,7 @@
           <div class="week-row" v-for="week in currentDates">
             <div class="day-cell" v-for="day in week"
                  :class="{'today' : day.isToday,
-              'not-cur-month' : !day.isCurMonth}">
+              'not-cur-month' : !day.isCurMonth, 'not-workable': notWorkableDay(day.weekDay)}">
               <p class="day-number">{{ day.monthDay }}</p>
             </div>
           </div>
@@ -94,6 +94,10 @@
         type : Array,
         default : []
       },
+      noWorkables: {
+        type: Array,
+        default: [],
+      },
       locale : {
         type : String,
         default : 'en'
@@ -143,9 +147,12 @@
           case "en":
             return 'more';
         }
-      }
+      },
     },
     methods : {
+      notWorkableDay(day) {
+        return this.noWorkables.includes(day);
+      },
       emitChangeMonth (firstDayOfMonth) {
         this.currentMonth = firstDayOfMonth;
 
@@ -302,6 +309,9 @@
   &.today{
      background-color:#fcf8e3;
    }
+  &.not-workable{
+    background-color: #f3f4f5;
+  }
   &.not-cur-month{
   .day-number{
     color:rgba(0,0,0,.24);
