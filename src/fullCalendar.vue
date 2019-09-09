@@ -64,7 +64,7 @@
           <div class="more-body">
             <slot name="fc-show-more-view">
               <ul class="body-list">
-                <li v-for="event in selectDay.events"
+                <li v-for="event in selectDay.events" :class="cssClasses(event)"
                     v-show="event.isShow" class="body-item"
                     @click="eventClick(event, $event)">
                   {{event.title}}
@@ -150,6 +150,17 @@
       },
     },
     methods : {
+      cssClasses (event) {
+        let cssClasses = event.cssClass;
+
+        if (!Array.isArray(cssClasses)) {
+          cssClasses = [cssClasses];
+        } else {
+          cssClasses = Array.from(cssClasses);
+        }
+        
+        return cssClasses.join(' ');
+      },
       notWorkableDay(day) {
         return this.noWorkables.includes(day);
       },
