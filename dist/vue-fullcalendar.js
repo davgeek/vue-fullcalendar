@@ -18621,7 +18621,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return _vm.$emit('click', _vm.event, $event)
 	      }
 	    }
-	  }, [(_vm.showTitle) ? _vm._t("default", [_vm._v("\n        Def: " + _vm._s(_vm.event.title) + "\n    ")], {
+	  }, [(_vm.showTitle) ? _vm._t("default", [_vm._v("\n        " + _vm._s(_vm.event.title) + "\n    ")], {
 	    "event": _vm.event
 	  }) : _vm._e()], 2)
 	},staticRenderFns: []}
@@ -18706,7 +18706,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.full-calendar-header {\n  display: flex;\n  align-items: center;\n}\n.full-calendar-header .header-left, .full-calendar-header .header-right {\n    flex: 1;\n}\n.full-calendar-header .header-center {\n    flex: 3;\n    text-align: center;\n}\n.full-calendar-header .header-center .title {\n      margin: 0 10px;\n}\n.full-calendar-header .header-center .prev-month, .full-calendar-header .header-center .next-month {\n      cursor: pointer;\n}\n", ""]);
+	exports.push([module.id, "\n.full-calendar-header {\n  display: flex;\n  align-items: center;\n}\n.full-calendar-header .header-left, .full-calendar-header .header-right {\n    flex: 1;\n}\n.full-calendar-header .header-center {\n    flex: 3;\n    text-align: center;\n}\n.full-calendar-header .header-center .title {\n      margin: 0 10px;\n      text-transform: capitalize;\n}\n.full-calendar-header .header-center .prev-month, .full-calendar-header .header-center .next-month {\n      cursor: pointer;\n}\n", ""]);
 	
 	// exports
 

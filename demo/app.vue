@@ -22,8 +22,8 @@
 let demoEvents = [
     {
       title    : 'Sunny 725-727',
-      start    : '2019-09-25',
-      end      : '2019-09-27',
+      start    : '2019-09-09',
+      end      : '2019-09-09',
       cssClass : 'family'
     },
     {

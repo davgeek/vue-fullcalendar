@@ -63,6 +63,7 @@
     text-align:center;
     .title{
       margin: 0 10px;
+      text-transform: capitalize;
     }
     .prev-month,.next-month{
       cursor: pointer;
