@@ -4,14 +4,17 @@
   		Here is the demo of vue-fullcalendar, no jquery fullcalendar.js required!
   	</p>
     <full-calendar class="test-fc" :events="fcEvents" 
-      first-day='1' locale="fr"
+      first-day='1' locale="es"
       @changeMonth="changeMonth"
       @eventClick="eventClick"
       @dayClick="dayClick"
       @moreClick="moreClick">
         <template slot="fc-event-card" scope="p">
-            <p><i class="fa">sadfsd</i> {{ p.event.title }} test</p>
+            <p><i class="fa"></i> {{ p.event.title }} pepepepep</p>
         </template>
+        <!-- <template slot="fc-show-more-view">
+          fc-show-more-view
+        </template> -->
     </full-calendar>
   </div>
 </template>
@@ -19,34 +22,34 @@
 let demoEvents = [
     {
       title    : 'Sunny 725-727',
-      start    : '2017-02-25',
-      end      : '2017-02-27',
+      start    : '2019-09-25',
+      end      : '2019-09-27',
       cssClass : 'family'
     },
     {
       title : 'Lunfel 726-727',
-      start : '2017-02-26',
-      end : '2017-02-27',
+      start : '2019-09-26',
+      end : '2019-09-27',
       cssClass : ['home', 'work']
     },
     {
       title : 'Lunfel 2/27-2/28',
-      start : '2017-02-27',
-      end : '2017-02-28'
+      start : '2019-09-27',
+      end : '2019-09-28'
     },
     {
         title : 'Lunfel 2/27-2/28',
-        start : '2017-02-27',
-        end : '2017-02-28'
+        start : '2019-09-27',
+        end : '2019-09-28'
     },
     {
         title : 'Lunfel 2/27-2/28',
-        start : '2017-02-27',
-        end : '2017-02-28'
+        start : '2019-09-27',
+        end : '2019-09-28'
     },
     {
         title : 'Lunfel 2/26-3/05',
-        start : '2017-02-26',
+        start : '2019-09-26',
         end : '2017-03-05'
     },
     {
@@ -57,7 +60,7 @@ let demoEvents = [
     {
         title : 'Lunfel 1/27-2/2',
         start : '2017-01-27',
-        end : '2017-02-02'
+        end : '2019-09-02'
     },
     {
         title : 'Lunfel 3/27-3/28',

@@ -47,7 +47,7 @@
                 </event-card>
                 <p v-if="day.events.length > eventLimit"
                    class="more-link" @click.stop="selectThisDay(day, $event)">
-                  + {{day.events[day.events.length -1].cellIndex - eventLimit}} more
+                  + {{day.events[day.events.length -1].cellIndex - eventLimit}} {{moreText}}
                 </p>
               </div>
             </div>
@@ -62,13 +62,15 @@
             <span class="close" @click.stop="showMore = false">x</span>
           </div>
           <div class="more-body">
-            <ul class="body-list">
-              <li v-for="event in selectDay.events"
-                  v-show="event.isShow" class="body-item"
-                  @click="eventClick(event, $event)">
-                {{event.title}}
-              </li>
-            </ul>
+            <slot name="fc-show-more-view">
+              <ul class="body-list">
+                <li v-for="event in selectDay.events"
+                    v-show="event.isShow" class="body-item"
+                    @click="eventClick(event, $event)">
+                  {{event.title}}
+                </li>
+              </ul>
+            </slot>
           </div>
         </div>
 
@@ -83,7 +85,7 @@
 <script type="text/babel">
   // import langSets from './dataMap/langSets'
   import dateFunc from './components/dateFunc'
-  import moment from 'moment';
+  import moment, { lang, locale } from 'moment';
   import EventCard from './components/eventCard.vue';
 
   export default {
@@ -116,7 +118,7 @@
       return {
         currentMonth : moment().startOf('month'),
         isLismit : true,
-        eventLimit : 3,
+        eventLimit : 4,
         showMore : false,
         morePos : {
           top: 0,
@@ -128,6 +130,15 @@
     computed: {
       currentDates () {
         return this.getCalendar()
+      },
+      moreText() {
+        switch(this.locale) {
+          case "es":
+            return 'más';
+            break;
+          case "en":
+            return 'more';
+        }
       }
     },
     methods : {
