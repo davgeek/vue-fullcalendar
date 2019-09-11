@@ -339,7 +339,7 @@
   .events-week{
     display: flex;
   .events-day{
-    cursor: pointer;
+    // cursor: pointer;
     flex:1;
     min-height: 112px;
     overflow: hidden;
