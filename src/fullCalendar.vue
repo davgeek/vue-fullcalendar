@@ -121,7 +121,7 @@
     },
     mounted () {
       this.emitChangeMonth(this.currentMonth);
-      // console.log(moment("2019-09-14T17:01:00.000+0000").format("YYYY-MM-DD"));
+      // console.log(moment("2019-09-14T00:00:00.000+0000").utc().format("YYYY-MM-DD"));
     },
     data () {
       return {
@@ -191,7 +191,7 @@
               isToday : monthViewStartDate.isSame(moment(), 'day'),
               isCurMonth : monthViewStartDate.isSame(this.currentMonth, 'month'),
               weekDay : perDay,
-              date : moment(monthViewStartDate),
+              date : moment(monthViewStartDate).utc(),
               events : this.slotEvents(monthViewStartDate)
             });
 
@@ -208,8 +208,8 @@
         // find all events start from this date
         let cellIndexArr = [];
         let thisDayEvents = this.events.filter(day => {
-          let st = moment(day.start).format("YYYY-MM-DD");
-          let ed = moment(day.end ? day.end : st).format("YYYY-MM-DD");
+          let st = moment(day.start).utc().format("YYYY-MM-DD");
+          let ed = moment(day.end ? day.end : day.start).utc().format("YYYY-MM-DD");
 
           return date.isBetween(st, ed, null, '[]');
         });
@@ -269,7 +269,7 @@
     filters: {
       localeWeekDay (weekday, firstDay, locale) {
         firstDay = parseInt(firstDay);
-        const localMoment = moment().locale(locale);
+        const localMoment = moment().utc().locale(locale);
         return localMoment.localeData().weekdaysShort()[(weekday + firstDay) % 7];
       }
     }

@@ -37,13 +37,13 @@
                 return cssClasses.join(' ');
             },
             showTitle() {
-                return (this.date.day() == this.firstDay || this.start.isSame(this.date, 'day'));
+                return (moment(this.date).day() == this.firstDay || this.start.isSame(this.date, 'day'));
             },
             start () {
-                return moment(this.event.start);
+                return moment(this.event.start).utc();
             },
             end () {
-                return moment(this.event.end);
+                return moment(this.event.end).utc();
             }
         }
     }
