@@ -121,6 +121,7 @@
     },
     mounted () {
       this.emitChangeMonth(this.currentMonth);
+      // console.log(moment("2019-09-14T17:01:00.000+0000").format("YYYY-MM-DD"));
     },
     data () {
       return {
@@ -207,8 +208,8 @@
         // find all events start from this date
         let cellIndexArr = [];
         let thisDayEvents = this.events.filter(day => {
-          let st = moment(day.start);
-          let ed = moment(day.end ? day.end : st);
+          let st = moment(day.start).format("YYYY-MM-DD");
+          let ed = moment(day.end ? day.end : st).format("YYYY-MM-DD");
 
           return date.isBetween(st, ed, null, '[]');
         });

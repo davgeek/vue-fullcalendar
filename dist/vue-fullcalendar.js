@@ -572,6 +572,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  mounted: function mounted() {
 	    this.emitChangeMonth(this.currentMonth);
+	    // console.log(moment("2019-09-14T17:01:00.000+0000").format("YYYY-MM-DD"));
 	  },
 	  data: function data() {
 	    return {
@@ -659,8 +660,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // find all events start from this date
 	      var cellIndexArr = [];
 	      var thisDayEvents = this.events.filter(function (day) {
-	        var st = (0, _moment2.default)(day.start);
-	        var ed = (0, _moment2.default)(day.end ? day.end : st);
+	        var st = (0, _moment2.default)(day.start).format("YYYY-MM-DD");
+	        var ed = (0, _moment2.default)(day.end ? day.end : st).format("YYYY-MM-DD");
 	
 	        return date.isBetween(st, ed, null, '[]');
 	      });

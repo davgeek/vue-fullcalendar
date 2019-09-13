@@ -21,51 +21,9 @@
 <script>
 let demoEvents = [
     {
-      title    : 'Sunny 725-727',
-      start    : '2019-09-09',
-      end      : '2019-09-09',
-      cssClass : 'family'
-    },
-    {
-      title : 'Lunfel 726-727',
-      start : '2019-09-26',
-      end : '2019-09-27',
-      cssClass : ['home', 'work']
-    },
-    {
-      title : 'Lunfel 2/27-2/28',
-      start : '2019-09-27',
-      end : '2019-09-28'
-    },
-    {
-        title : 'Lunfel 2/27-2/28',
-        start : '2019-09-27',
-        end : '2019-09-28'
-    },
-    {
-        title : 'Lunfel 2/27-2/28',
-        start : '2019-09-27',
-        end : '2019-09-28'
-    },
-    {
-        title : 'Lunfel 2/26-3/05',
-        start : '2019-09-26',
-        end : '2017-03-05'
-    },
-    {
-        title : 'Lunfel 1/27-1/28',
-        start : '2017-01-27',
-        end : '2017-01-28'
-    },
-    {
         title : 'Lunfel 1/27-2/2',
-        start : '2017-01-27',
-        end : '2019-09-02'
-    },
-    {
-        title : 'Lunfel 3/27-3/28',
-        start : '2017-03-27',
-        end : '2017-03-28'
+        start : '2019-09-27',
+        end : '2019-09-29'
     },
   ];
 
