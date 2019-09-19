@@ -16,8 +16,8 @@ let dateFunc = {
 
     return start;
   },
-  getMonthViewEndDate (date) {
-    return this.getMonthViewStartDate().add(6, 'weeks');
+  getMonthViewEndDate (date, firstDay) {
+    return this.getMonthViewStartDate(date, firstDay).add(6, 'weeks');
   }
 };
 

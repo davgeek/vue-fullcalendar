@@ -188,7 +188,7 @@
           for(let perDay = 0 ; perDay < 7 ; perDay++) {
             week.push({
               monthDay : monthViewStartDate.date(),
-              isToday : monthViewStartDate.isSame(moment(), 'day'),
+              isToday : monthViewStartDate.isSame(moment().utc(), 'day'),
               isCurMonth : monthViewStartDate.isSame(this.currentMonth, 'month'),
               weekDay : perDay,
               date : moment(monthViewStartDate).utc(),

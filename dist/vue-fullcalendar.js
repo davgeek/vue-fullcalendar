@@ -572,7 +572,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  mounted: function mounted() {
 	    this.emitChangeMonth(this.currentMonth);
-	    // console.log(moment("2019-09-14T17:01:00.000+0000").format("YYYY-MM-DD"));
+	    // console.log(moment("2019-09-14T00:00:00.000+0000").utc().format("YYYY-MM-DD"));
 	  },
 	  data: function data() {
 	    return {
@@ -640,10 +640,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        for (var perDay = 0; perDay < 7; perDay++) {
 	          week.push({
 	            monthDay: monthViewStartDate.date(),
-	            isToday: monthViewStartDate.isSame((0, _moment2.default)(), 'day'),
+	            isToday: monthViewStartDate.isSame((0, _moment2.default)().utc(), 'day'),
 	            isCurMonth: monthViewStartDate.isSame(this.currentMonth, 'month'),
 	            weekDay: perDay,
-	            date: (0, _moment2.default)(monthViewStartDate),
+	            date: (0, _moment2.default)(monthViewStartDate).utc(),
 	            events: this.slotEvents(monthViewStartDate)
 	          });
 	
@@ -660,8 +660,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // find all events start from this date
 	      var cellIndexArr = [];
 	      var thisDayEvents = this.events.filter(function (day) {
-	        var st = (0, _moment2.default)(day.start).format("YYYY-MM-DD");
-	        var ed = (0, _moment2.default)(day.end ? day.end : st).format("YYYY-MM-DD");
+	        var st = (0, _moment2.default)(day.start).utc().format("YYYY-MM-DD");
+	        var ed = (0, _moment2.default)(day.end ? day.end : day.start).utc().format("YYYY-MM-DD");
 	
 	        return date.isBetween(st, ed, null, '[]');
 	      });
@@ -721,7 +721,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  filters: {
 	    localeWeekDay: function localeWeekDay(weekday, firstDay, locale) {
 	      firstDay = parseInt(firstDay);
-	      var localMoment = (0, _moment2.default)().locale(locale);
+	      var localMoment = (0, _moment2.default)().utc().locale(locale);
 	      return localMoment.localeData().weekdaysShort()[(weekday + firstDay) % 7];
 	    }
 	  }
@@ -1427,8 +1427,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    return start;
 	  },
-	  getMonthViewEndDate: function getMonthViewEndDate(date) {
-	    return this.getMonthViewStartDate().add(6, 'weeks');
+	  getMonthViewEndDate: function getMonthViewEndDate(date, firstDay) {
+	    return this.getMonthViewStartDate(date, firstDay).add(6, 'weeks');
 	  }
 	};
 	
@@ -18612,13 +18612,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return cssClasses.join(' ');
 	        },
 	        showTitle: function showTitle() {
-	            return this.date.day() == this.firstDay || this.start.isSame(this.date, 'day');
+	            return (0, _moment2.default)(this.date).day() == this.firstDay || this.start.isSame(this.date, 'day');
 	        },
 	        start: function start() {
-	            return (0, _moment2.default)(this.event.start);
+	            return (0, _moment2.default)(this.event.start).utc();
 	        },
 	        end: function end() {
-	            return (0, _moment2.default)(this.event.end);
+	            return (0, _moment2.default)(this.event.end).utc();
 	        }
 	    }
 	}; //
