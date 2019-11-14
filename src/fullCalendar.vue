@@ -74,9 +74,9 @@
           </div>
         </div>
 
-        <slot name="body-card">
+        <!-- <slot name="body-card">
 
-        </slot>
+        </slot> -->
 
       </div>
     </div>
@@ -207,7 +207,7 @@
       slotEvents (date) {
 
         // find all events start from this date
-        let cellIndexArr = [];
+        // let cellIndexArr = [];
         let thisDayEvents = this.events.filter(day => {
           let st = moment(day.start).utc().format("YYYY-MM-DD");
           let ed = moment(day.end ? day.end : day.start).utc().format("YYYY-MM-DD");
@@ -216,12 +216,12 @@
         });
 
         // sort by duration
-        thisDayEvents.sort((a,b)=>{
+        thisDayEvents.sort((a,b) => {
           if(!a.cellIndex) return 1;
           if (!b.cellIndex) return -1;
           return a.cellIndex - b.cellIndex
         });
-
+        
         // mark cellIndex and place holder
         for (let i = 0;i < thisDayEvents.length;i++) {
           thisDayEvents[i].cellIndex = thisDayEvents[i].cellIndex || (i + 1);
@@ -235,7 +235,6 @@
             isShow : false
           })
         }
-
         return thisDayEvents
       },
       selectThisDay (day, jsEvent) {
@@ -357,7 +356,6 @@
   }
   }
   .event-box{
-  padding-top: 15px;
   .event-item{
     cursor: pointer;
     font-size:12px;
