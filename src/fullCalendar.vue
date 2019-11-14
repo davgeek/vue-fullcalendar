@@ -47,7 +47,7 @@
                 </event-card>
                 <p v-if="day.events.length > eventLimit"
                    class="more-link" @click.stop="selectThisDay(day, $event)">
-                  + {{day.events[day.events.length -1].cellIndex - eventLimit}} {{moreText}}
+                  + {{day.events.length - eventLimit}} {{moreText}}
                 </p>
               </div>
             </div>
@@ -357,6 +357,7 @@
   }
   }
   .event-box{
+  padding-top: 15px;
   .event-item{
     cursor: pointer;
     font-size:12px;
