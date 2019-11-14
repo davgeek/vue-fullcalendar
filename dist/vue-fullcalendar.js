@@ -619,6 +619,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    emitChangeMonth: function emitChangeMonth(firstDayOfMonth) {
 	      this.currentMonth = firstDayOfMonth;
+	      this.showMore = false;
 	
 	      var start = _dateFunc2.default.getMonthViewStartDate(firstDayOfMonth, this.firstDay);
 	      var end = _dateFunc2.default.getMonthViewEndDate(firstDayOfMonth, this.firstDay);

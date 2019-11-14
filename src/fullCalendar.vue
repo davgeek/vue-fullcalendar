@@ -167,6 +167,7 @@
       },
       emitChangeMonth (firstDayOfMonth) {
         this.currentMonth = firstDayOfMonth;
+        this.showMore = false;
 
         let start = dateFunc.getMonthViewStartDate(firstDayOfMonth, this.firstDay);
         let end = dateFunc.getMonthViewEndDate(firstDayOfMonth, this.firstDay);
